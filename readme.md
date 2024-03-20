@@ -13,6 +13,8 @@ The main focus of this project is to utilize the provided data in order to allow
 * Decision Tree Classifier
 
 
+## Resources
 
+[Dataset for Multiple Diesease Prediction](https://www.kaggle.com/datasets/ehababoelnaga/multiple-disease-prediction?select=blood_samples_dataset_test.csv)
 
 
