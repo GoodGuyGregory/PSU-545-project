@@ -5,10 +5,10 @@ import numpy as np
 
 
 # read in the data file
-data = pd.read_csv('../test_data_no_labels.csv')
+data = pd.read_csv('../train_data_no_labels.csv')
 
 # read in the label file
-labels = pd.read_csv('../test_data_labels.csv')
+labels = pd.read_csv('../train_data_labels.csv')
 
 #tsne
 tsne = TSNE(n_components=2, random_state=0)  # n_components is the dimension of the embedded space.
