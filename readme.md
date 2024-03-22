@@ -8,6 +8,10 @@ Various methods have been used to track metrics falsely through Elizabeth Holmes
 
 * Multi-Layer-Perceptron (Neural Network)
 * Decision Tree Classifier
+* Support Vector Machine (SVM)
+* Naive Bayes Theorem
+* Logistic Regression
+
 
 
 ## Resources
