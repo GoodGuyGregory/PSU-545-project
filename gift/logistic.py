@@ -20,7 +20,7 @@ def preprocess():
     return x_train, x_test, y_train, y_test
 
 def train_test(x_train,y_train,x_test,y_test):
-    logss = LogisticRegression(random_state= 34,penalty= 'l2', C= 0.15)
+    logss = LogisticRegression(random_state= 34,penalty= 'l2', C= 0.5, multi_class= 'ovr', solver= 'lbfgs')
     logss.fit(x_train, y_train.values.ravel())
     pred = logss.predict(x_test)
 
@@ -29,15 +29,15 @@ def train_test(x_train,y_train,x_test,y_test):
     print(acc)
 
     ## classification  report of the model
-    names = ['Anemia', 'Healthy', 'Diabetes', 'Thalasse', 'Thromboc']
-    print(classification_report(y_test, pred, target_names= names))
-    
-    ## confusion matrix
-    confs = metrics.confusion_matrix(y_test, pred)
-    print(confs)
-    dis = metrics.ConfusionMatrixDisplay(confusion_matrix= confs, display_labels=['Anemia', 'Healthy', 'Diabetes', 'Thalasse', 'Thromboc'])
-    dis.plot()
-    plt.show()
+    # names = ['Anemia', 'Healthy', 'Diabetes', 'Thalasse', 'Thromboc']
+    # print(classification_report(y_test, pred, target_names= names))
+
+    # ## confusion matrix
+    # confs = metrics.confusion_matrix(y_test, pred)
+    # print(confs)
+    # dis = metrics.ConfusionMatrixDisplay(confusion_matrix= confs, display_labels=['Anemia', 'Healthy', 'Diabetes', 'Thalasse', 'Thromboc'])
+    # dis.plot()
+    # plt.show()
 
 x_train, x_test, y_train, y_test = preprocess()
 train_test(x_train,y_train,x_test,y_test)
