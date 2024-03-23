@@ -36,7 +36,7 @@ def main():
 
     X_train, X_test, y_train, y_test = train_test_split(trainingData, trainingTargets, test_size=0.2, random_state=42)
 
-    mlp = MLPClassifier(hidden_layer_sizes=(5,500), activation="relu", alpha=10, batch_size=487, learning_rate_init=0.001, max_iter=2500, random_state=42)
+    mlp = MLPClassifier(hidden_layer_sizes=(24, 2000), activation="relu", alpha=10, batch_size=250, learning_rate_init=0.001, max_iter=1000, random_state=42)
     mlp.fit(X_train,y_train)
 
     y_prediction = mlp.predict(X_test)
