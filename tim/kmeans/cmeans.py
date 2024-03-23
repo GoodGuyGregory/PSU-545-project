@@ -6,7 +6,7 @@ import skfuzzy as fuzz
 data = pd.read_csv('train.csv')
 X = data.iloc[:, :-1].values  # Exclude the label column
 
-# Run Fuzzy C-Means
+# Run Fuzzy C-Means (via the sklearn library)
 n_clusters = 5
 cntr, u, u0, d, jm, p, fpc = fuzz.cluster.cmeans(X.T, n_clusters, 2, error=0.005, maxiter=1000, init=None)
 
@@ -19,6 +19,7 @@ def compute_sse(dataset, centers):
     return sse
 
 # Load each labeled dataset and compute SSE
+# Ideally, this would result in each label being assigned to a unique cluster, which would indicate that this method could be used to quickly identify the label of a new data point
 labels = ['Anemia', 'Diabetes', 'Healthy', 'Thalasse', 'Thromboc']
 for label in labels:
     labeled_data = pd.read_csv(f'{label}.csv').iloc[:, :-1].values  # Exclude the label column

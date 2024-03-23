@@ -11,7 +11,9 @@ Various methods have been used to track metrics falsely through Elizabeth Holmes
 * Support Vector Machine (SVM)
 * Naive Bayes Theorem
 * Logistic Regression
-
+* Kmeans and Fuzzy C-Means
+* T-SNE
+* Encoder/Decoder
 
 
 ## Resources

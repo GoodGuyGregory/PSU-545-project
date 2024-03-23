@@ -5,12 +5,13 @@ from sklearn.cluster import KMeans
 data = pd.read_csv('train.csv')
 X = data.iloc[:, :-1]  # Exclude the label column
 
-# Run k-means clustering
+# Run k-means clustering (via the sklearn library)
 kmeans = KMeans(n_clusters=5, random_state=0).fit(X)
 clusters = kmeans.predict(X)
 centers = kmeans.cluster_centers_
 
 # Function to compute SSE for a given dataset against each cluster center
+# used to check the accuracy of a cluster assignment for a particular label
 def compute_sse(dataset, centers):
     sse = []
     for center in centers:
@@ -19,6 +20,7 @@ def compute_sse(dataset, centers):
     return sse
 
 # Load each labeled dataset and compute SSE
+# Ideally, this would result in each label being assigned to a unique cluster, which would indicate that this method could be used to quickly identify the label of a new data point
 labels = ['Anemia', 'Diabetes', 'Healthy', 'Thalasse', 'Thromboc']
 for label in labels:
     labeled_data = pd.read_csv(f'{label}.csv').iloc[:, :-1]  # Exclude the label column
